@@ -8,13 +8,12 @@
 import UIKit
 
 protocol PhotoSearchSceneDisplayView: AnyObject {
-    
+    func displaySearchResult(photoUrls: [String])
 }
 
 class PhotoSearchViewController: UIViewController {
 
     var interactor: PhotoSearchSceneInteractor!
-    let photoSearchWorker = PhotoSearchWorker()
     
     // MARK: - Outletes
     @IBOutlet private weak var imageSearchBar: UISearchBar!
@@ -23,12 +22,13 @@ class PhotoSearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        photoSearchWorker.search("cat") { result in
-            print(result)
-        }
+        self.interactor.search("cat")
     }
 }
 
 extension PhotoSearchViewController: PhotoSearchSceneDisplayView {
     
+    func displaySearchResult(photoUrls: [String]) {
+        
+    }
 }

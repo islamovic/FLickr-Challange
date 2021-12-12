@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window = UIWindow.init(frame: UIScreen.main.bounds)
         window?.windowScene = scene as? UIWindowScene
-        window?.rootViewController = PhotoSearchViewController()
+        window?.rootViewController = PhotoSearchSceneConfigurator.configure()
         window?.makeKeyAndVisible()
     }
 

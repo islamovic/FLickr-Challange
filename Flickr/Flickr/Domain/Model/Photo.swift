@@ -32,3 +32,9 @@ struct Photo: Codable {
         case isFamily = "isfamily"
     }
 }
+
+extension Photo {
+    var photoURL: String {
+        return "http://farm\(self.farm).staticflickr.com/\(self.server)/\(self.id)_\(self.secret).png"
+    }
+}

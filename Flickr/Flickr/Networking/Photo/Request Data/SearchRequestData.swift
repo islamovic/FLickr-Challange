@@ -11,12 +11,10 @@ extension Photo.Search.Input: InputWrapping {
     
     func wrapping() -> [String : Any] {
         return [
-            "text": title,
+            "tags": title,
             "api_key": Constants.Client.apiKey,
             "format": "json",
-            "nojsoncallback": 1,
-            "per_page": 2,
-            "page": 1
+            "nojsoncallback": 1
         ]
     }
 }

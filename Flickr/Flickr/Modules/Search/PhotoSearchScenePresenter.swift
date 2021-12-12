@@ -8,7 +8,7 @@
 import Foundation
 
 protocol PhotoSearchScenePresentationLogic: AnyObject {
-    
+    func presentPhotoSearch(_ photos: [Photo])
 }
 
 class PhotoSearchScenePresenter: PhotoSearchScenePresentationLogic {
@@ -19,5 +19,14 @@ class PhotoSearchScenePresenter: PhotoSearchScenePresentationLogic {
     // MARK: - Initializers
     required init(displayView: PhotoSearchSceneDisplayView) {
         self.displayView = displayView
+    }
+}
+
+extension PhotoSearchScenePresenter {
+    
+    func presentPhotoSearch(_ photos: [Photo]) {
+        
+        let photoUrls = photos.map { $0.photoURL }
+        self.displayView?.displaySearchResult(photoUrls: photoUrls)
     }
 }
