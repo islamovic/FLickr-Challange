@@ -14,9 +14,9 @@ extension Constants {
             
             switch environment {
             case .release:
-                return "https://www.flickr.com/services/rest/"
+                return "https://www.flickr.com/services/rest"
             case .debug:
-                return "https://www.flickr.com/services/rest/"
+                return "https://www.flickr.com/services/rest"
             }
         }
     }

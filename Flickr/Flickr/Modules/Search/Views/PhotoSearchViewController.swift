@@ -14,6 +14,7 @@ protocol PhotoSearchSceneDisplayView: AnyObject {
 class PhotoSearchViewController: UIViewController {
 
     var interactor: PhotoSearchSceneInteractor!
+    let photoSearchWorker = PhotoSearchWorker()
     
     // MARK: - Outletes
     @IBOutlet private weak var imageSearchBar: UISearchBar!
@@ -21,6 +22,10 @@ class PhotoSearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        photoSearchWorker.search("cat") { result in
+            print(result)
+        }
     }
 }
 

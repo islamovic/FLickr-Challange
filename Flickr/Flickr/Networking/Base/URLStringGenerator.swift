@@ -22,12 +22,7 @@ enum URLStringGenerator {
 
     static func resource(_ resource: String?, root: String, apiVersion: String?) -> ([String]) -> String {
         return { (components: [String]) in
-            var uri = generatePath(for: resource, root: root, apiVersion: apiVersion)
-
-            if !components.isEmpty {
-                uri += "/" + components.joined(separator: "/")
-            }
-
+            let uri = generatePath(for: resource, root: root, apiVersion: apiVersion)
             return uri
         }
     }
