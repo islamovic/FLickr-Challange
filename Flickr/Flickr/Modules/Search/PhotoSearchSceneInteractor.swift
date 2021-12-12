@@ -16,7 +16,7 @@ class PhotoSearchSceneInteractor: PhotoSearchSceneBusinessLogic {
     // MARK: - Stored Properties
     let presenter: PhotoSearchScenePresentationLogic?
     
-    let searchWorker = PhotoSearchWorker()
+    private let searchWorker = PhotoSearchWorker()
     
     // MARK: - Initializers
     required init(presenter: PhotoSearchScenePresentationLogic) {

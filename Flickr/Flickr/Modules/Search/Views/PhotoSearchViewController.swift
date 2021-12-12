@@ -14,6 +14,7 @@ protocol PhotoSearchSceneDisplayView: AnyObject {
 class PhotoSearchViewController: UIViewController {
 
     var interactor: PhotoSearchSceneInteractor!
+    var viewStore: PhotoSearchSceneViewStore!
     
     // MARK: - Outletes
     @IBOutlet private weak var imageSearchBar: UISearchBar!
@@ -22,13 +23,37 @@ class PhotoSearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.interactor.search("cat")
+        self.searchResultCollectionView.register(PhotoCell.self)
+        self.searchResultCollectionView.dataSource = self
+        self.imageSearchBar.delegate = self
     }
 }
 
 extension PhotoSearchViewController: PhotoSearchSceneDisplayView {
     
     func displaySearchResult(photoUrls: [String]) {
-        
+        self.viewStore.photosUrl = photoUrls
+        self.searchResultCollectionView.reloadData()
+    }
+}
+
+extension PhotoSearchViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let search = searchBar.text else { return }
+        self.interactor.search(search)
+    }
+}
+
+extension PhotoSearchViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.viewStore.photosUrl.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: PhotoCell = collectionView.dequeueReusableCell(indexPath: indexPath)
+        cell.configureCell(self.viewStore.photosUrl[indexPath.row])
+        return cell
     }
 }
