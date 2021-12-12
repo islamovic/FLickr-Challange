@@ -13,6 +13,8 @@
 		A69120262765B48900F8A734 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A69120242765B48900F8A734 /* Main.storyboard */; };
 		A69120282765B48A00F8A734 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A69120272765B48A00F8A734 /* Assets.xcassets */; };
 		A691202B2765B48A00F8A734 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A69120292765B48A00F8A734 /* LaunchScreen.storyboard */; };
+		A69120362765B4F700F8A734 /* PhotoSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69120342765B4F700F8A734 /* PhotoSearchViewController.swift */; };
+		A69120372765B4F700F8A734 /* PhotoSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A69120352765B4F700F8A734 /* PhotoSearchViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		A69120272765B48A00F8A734 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A691202A2765B48A00F8A734 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A691202C2765B48A00F8A734 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A69120342765B4F700F8A734 /* PhotoSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSearchViewController.swift; sourceTree = "<group>"; };
+		A69120352765B4F700F8A734 /* PhotoSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoSearchViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		A691201D2765B48900F8A734 /* Flickr */ = {
 			isa = PBXGroup;
 			children = (
+				A69120322765B4D100F8A734 /* Modules */,
 				A691201E2765B48900F8A734 /* AppDelegate.swift */,
 				A69120202765B48900F8A734 /* SceneDelegate.swift */,
 				A69120222765B48900F8A734 /* ViewController.swift */,
@@ -65,6 +70,23 @@
 				A691202C2765B48A00F8A734 /* Info.plist */,
 			);
 			path = Flickr;
+			sourceTree = "<group>";
+		};
+		A69120322765B4D100F8A734 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				A69120332765B4DC00F8A734 /* Search */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		A69120332765B4DC00F8A734 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				A69120342765B4F700F8A734 /* PhotoSearchViewController.swift */,
+				A69120352765B4F700F8A734 /* PhotoSearchViewController.xib */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A691202B2765B48A00F8A734 /* LaunchScreen.storyboard in Resources */,
+				A69120372765B4F700F8A734 /* PhotoSearchViewController.xib in Resources */,
 				A69120282765B48A00F8A734 /* Assets.xcassets in Resources */,
 				A69120262765B48900F8A734 /* Main.storyboard in Resources */,
 			);
@@ -139,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A69120232765B48900F8A734 /* ViewController.swift in Sources */,
+				A69120362765B4F700F8A734 /* PhotoSearchViewController.swift in Sources */,
 				A691201F2765B48900F8A734 /* AppDelegate.swift in Sources */,
 				A69120212765B48900F8A734 /* SceneDelegate.swift in Sources */,
 			);
@@ -294,7 +318,6 @@
 				INFOPLIST_FILE = Flickr/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,7 +345,6 @@
 				INFOPLIST_FILE = Flickr/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
