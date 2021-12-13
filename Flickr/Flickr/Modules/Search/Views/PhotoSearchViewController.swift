@@ -13,6 +13,9 @@ protocol PhotoSearchSceneDisplayView: AnyObject {
 
 class PhotoSearchViewController: UIViewController {
 
+    private let numberOfColumns: Int = 2
+    private let itemHeight: CGFloat = 200
+    
     var interactor: PhotoSearchSceneInteractor!
     var viewStore: PhotoSearchSceneViewStore!
     
@@ -23,9 +26,34 @@ class PhotoSearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupUI()
+    }
+}
+
+private extension PhotoSearchViewController {
+    
+    func setupUI() {
         self.searchResultCollectionView.register(PhotoCell.self)
         self.searchResultCollectionView.dataSource = self
+        self.searchResultCollectionView.collectionViewLayout = photoListLayout
         self.imageSearchBar.delegate = self
+    }
+    
+    var photoListLayout: UICollectionViewLayout {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                              heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                               heightDimension: .absolute(itemHeight))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: numberOfColumns)
+        let spacing = CGFloat(10)
+        group.interItemSpacing = .fixed(spacing)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = spacing
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        
+        return UICollectionViewCompositionalLayout(section: section)
     }
 }
 
