@@ -18,6 +18,7 @@ class PhotoSearchViewController: UIViewController {
     
     var interactor: PhotoSearchSceneInteractor!
     var dataStore: PhotoSearchSceneDataStore!
+    var router: PhotoSearchSceneRouter!
     
     // MARK: - Outletes
     @IBOutlet private weak var imageSearchBar: UISearchBar!
@@ -28,11 +29,16 @@ class PhotoSearchViewController: UIViewController {
         
         setupUI()
     }
+    
+    @IBAction func searchButtonDidTapped(_ sender: UIButton) {
+        self.router.routeToSearchHistory()
+    }
 }
 
 private extension PhotoSearchViewController {
     
     func setupUI() {
+        self.title = "Photos Feed"
         self.searchResultCollectionView.register(PhotoCell.self)
         self.searchResultCollectionView.dataSource = self
         self.searchResultCollectionView.delegate = self

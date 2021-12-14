@@ -34,6 +34,14 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8g-cB-lXR">
+                    <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain"/>
+                    <connections>
+                        <action selector="searchButtonDidTapped:" destination="-1" eventType="touchUpInside" id="pdw-5t-vSd"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -42,8 +50,12 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ldL-G4-kRN" secondAttribute="bottom" id="KKz-EU-piH"/>
                 <constraint firstAttribute="trailing" secondItem="FNG-Us-vpC" secondAttribute="trailing" id="PLe-iG-Rmd"/>
                 <constraint firstItem="FNG-Us-vpC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="QcN-Fj-ydT"/>
+                <constraint firstItem="C8g-cB-lXR" firstAttribute="bottom" secondItem="FNG-Us-vpC" secondAttribute="bottom" id="SMh-52-zJ0"/>
                 <constraint firstItem="ldL-G4-kRN" firstAttribute="top" secondItem="FNG-Us-vpC" secondAttribute="bottom" id="dJg-5X-3R1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ldL-G4-kRN" secondAttribute="trailing" id="jwE-eT-Cvj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="C8g-cB-lXR" secondAttribute="trailing" id="mvU-Qv-Byz"/>
+                <constraint firstItem="C8g-cB-lXR" firstAttribute="top" secondItem="FNG-Us-vpC" secondAttribute="top" id="n0e-wv-Qvd"/>
+                <constraint firstItem="C8g-cB-lXR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nQ1-bD-iip"/>
                 <constraint firstItem="ldL-G4-kRN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zFR-0K-rBq"/>
             </constraints>
             <point key="canvasLocation" x="139" y="151"/>

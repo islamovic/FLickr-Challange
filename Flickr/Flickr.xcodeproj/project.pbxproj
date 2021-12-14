@@ -47,6 +47,10 @@
 		A6CEDBBA27669D3100CF5962 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CEDBB827669D3100CF5962 /* PhotoCell.swift */; };
 		A6CEDBBB27669D3100CF5962 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6CEDBB927669D3100CF5962 /* PhotoCell.xib */; };
 		A6CEDBBF27669EA400CF5962 /* UICollectionView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CEDBBE27669EA400CF5962 /* UICollectionView+Utils.swift */; };
+		A6EF4BB927688B4900D61186 /* SearchHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF4BB727688B4900D61186 /* SearchHistoryViewController.swift */; };
+		A6EF4BBA27688B4900D61186 /* SearchHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6EF4BB827688B4900D61186 /* SearchHistoryViewController.xib */; };
+		A6EF4BBC27688B6000D61186 /* SearchHistorySceneConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF4BBB27688B6000D61186 /* SearchHistorySceneConfigurator.swift */; };
+		A6EF4BBE27688BA100D61186 /* PhotoSerchSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF4BBD27688BA100D61186 /* PhotoSerchSceneRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +96,10 @@
 		A6CEDBB827669D3100CF5962 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		A6CEDBB927669D3100CF5962 /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
 		A6CEDBBE27669EA400CF5962 /* UICollectionView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Utils.swift"; sourceTree = "<group>"; };
+		A6EF4BB727688B4900D61186 /* SearchHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryViewController.swift; sourceTree = "<group>"; };
+		A6EF4BB827688B4900D61186 /* SearchHistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchHistoryViewController.xib; sourceTree = "<group>"; };
+		A6EF4BBB27688B6000D61186 /* SearchHistorySceneConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistorySceneConfigurator.swift; sourceTree = "<group>"; };
+		A6EF4BBD27688BA100D61186 /* PhotoSerchSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSerchSceneRouter.swift; sourceTree = "<group>"; };
 		C70B31D7094AED8ADF435454 /* Pods_Flickr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flickr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA92EBED5F73875F5C688389 /* Pods-Flickr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flickr.release.xcconfig"; path = "Target Support Files/Pods-Flickr/Pods-Flickr.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,6 +174,7 @@
 		A69120322765B4D100F8A734 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A6EF4BB527688AD400D61186 /* SearchHistory */,
 				A69120332765B4DC00F8A734 /* Search */,
 			);
 			path = Modules;
@@ -179,6 +188,7 @@
 				A6CEDB9727667C4D00CF5962 /* PhotoSearchSceneConfigurator.swift */,
 				A6CEDB9927667C5600CF5962 /* PhotoSearchSceneInteractor.swift */,
 				A6CEDB9B27667C5F00CF5962 /* PhotoSearchScenePresenter.swift */,
+				A6EF4BBD27688BA100D61186 /* PhotoSerchSceneRouter.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -358,6 +368,24 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		A6EF4BB527688AD400D61186 /* SearchHistory */ = {
+			isa = PBXGroup;
+			children = (
+				A6EF4BB627688ADD00D61186 /* Views */,
+				A6EF4BBB27688B6000D61186 /* SearchHistorySceneConfigurator.swift */,
+			);
+			path = SearchHistory;
+			sourceTree = "<group>";
+		};
+		A6EF4BB627688ADD00D61186 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A6EF4BB727688B4900D61186 /* SearchHistoryViewController.swift */,
+				A6EF4BB827688B4900D61186 /* SearchHistoryViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -421,6 +449,7 @@
 				A691202B2765B48A00F8A734 /* LaunchScreen.storyboard in Resources */,
 				A69120372765B4F700F8A734 /* PhotoSearchViewController.xib in Resources */,
 				A69120282765B48A00F8A734 /* Assets.xcassets in Resources */,
+				A6EF4BBA27688B4900D61186 /* SearchHistoryViewController.xib in Resources */,
 				A69120262765B48900F8A734 /* Main.storyboard in Resources */,
 				A6CEDBBB27669D3100CF5962 /* PhotoCell.xib in Resources */,
 			);
@@ -483,6 +512,7 @@
 				A6CEDB812766507800CF5962 /* AppLibManager.swift in Sources */,
 				A6CEDBAF2766822500CF5962 /* SearchRequestData.swift in Sources */,
 				A69120232765B48900F8A734 /* ViewController.swift in Sources */,
+				A6EF4BBE27688BA100D61186 /* PhotoSerchSceneRouter.swift in Sources */,
 				A69120362765B4F700F8A734 /* PhotoSearchViewController.swift in Sources */,
 				A6CEDB8D2766507800CF5962 /* HTTPMethod.swift in Sources */,
 				A691201F2765B48900F8A734 /* AppDelegate.swift in Sources */,
@@ -497,6 +527,7 @@
 				A6CEDB942766507800CF5962 /* InputWrapping.swift in Sources */,
 				A6CEDBB3276682F700CF5962 /* SearchRouter.swift in Sources */,
 				A6CEDB912766507800CF5962 /* SessionManager.swift in Sources */,
+				A6EF4BB927688B4900D61186 /* SearchHistoryViewController.swift in Sources */,
 				A6CEDBBF27669EA400CF5962 /* UICollectionView+Utils.swift in Sources */,
 				A6CEDB9C27667C5F00CF5962 /* PhotoSearchScenePresenter.swift in Sources */,
 				A6CEDB8E2766507800CF5962 /* OutputWrapping.swift in Sources */,
@@ -506,6 +537,7 @@
 				A6CEDB932766507800CF5962 /* Types.swift in Sources */,
 				A6CEDBB12766826E00CF5962 /* SearchResponse.swift in Sources */,
 				A6CEDBA32766805500CF5962 /* Search.swift in Sources */,
+				A6EF4BBC27688B6000D61186 /* SearchHistorySceneConfigurator.swift in Sources */,
 				A6CEDB8C2766507800CF5962 /* NetworkService.swift in Sources */,
 				A6CEDBBA27669D3100CF5962 /* PhotoCell.swift in Sources */,
 				A6CEDB7F2766507800CF5962 /* Constants.swift in Sources */,
