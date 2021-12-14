@@ -52,6 +52,8 @@
 		A6DFBA3D2768BDDA00845DB2 /* UITableView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DFBA3C2768BDDA00845DB2 /* UITableView+Utils.swift */; };
 		A6DFBA402768C03D00845DB2 /* SearchHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DFBA3E2768C03D00845DB2 /* SearchHistoryCell.swift */; };
 		A6DFBA412768C03D00845DB2 /* SearchHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6DFBA3F2768C03D00845DB2 /* SearchHistoryCell.xib */; };
+		A6DFBA442768CD0600845DB2 /* ClearAllHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DFBA432768CD0600845DB2 /* ClearAllHeader.swift */; };
+		A6DFBA462768CD1300845DB2 /* ClearAllHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6DFBA452768CD1300845DB2 /* ClearAllHeader.xib */; };
 		A6EF4BB927688B4900D61186 /* SearchHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF4BB727688B4900D61186 /* SearchHistoryViewController.swift */; };
 		A6EF4BBA27688B4900D61186 /* SearchHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6EF4BB827688B4900D61186 /* SearchHistoryViewController.xib */; };
 		A6EF4BBC27688B6000D61186 /* SearchHistorySceneConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF4BBB27688B6000D61186 /* SearchHistorySceneConfigurator.swift */; };
@@ -107,6 +109,8 @@
 		A6DFBA3C2768BDDA00845DB2 /* UITableView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Utils.swift"; sourceTree = "<group>"; };
 		A6DFBA3E2768C03D00845DB2 /* SearchHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryCell.swift; sourceTree = "<group>"; };
 		A6DFBA3F2768C03D00845DB2 /* SearchHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchHistoryCell.xib; sourceTree = "<group>"; };
+		A6DFBA432768CD0600845DB2 /* ClearAllHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearAllHeader.swift; sourceTree = "<group>"; };
+		A6DFBA452768CD1300845DB2 /* ClearAllHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClearAllHeader.xib; sourceTree = "<group>"; };
 		A6EF4BB727688B4900D61186 /* SearchHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryViewController.swift; sourceTree = "<group>"; };
 		A6EF4BB827688B4900D61186 /* SearchHistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchHistoryViewController.xib; sourceTree = "<group>"; };
 		A6EF4BBB27688B6000D61186 /* SearchHistorySceneConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistorySceneConfigurator.swift; sourceTree = "<group>"; };
@@ -382,6 +386,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		A6DFBA422768CCED00845DB2 /* Cusom View */ = {
+			isa = PBXGroup;
+			children = (
+				A6DFBA432768CD0600845DB2 /* ClearAllHeader.swift */,
+				A6DFBA452768CD1300845DB2 /* ClearAllHeader.xib */,
+			);
+			path = "Cusom View";
+			sourceTree = "<group>";
+		};
 		A6EF4BB527688AD400D61186 /* SearchHistory */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,6 +409,7 @@
 		A6EF4BB627688ADD00D61186 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A6DFBA422768CCED00845DB2 /* Cusom View */,
 				A6EF4BBF2768939D00D61186 /* Cell */,
 				A6EF4BB727688B4900D61186 /* SearchHistoryViewController.swift */,
 				A6EF4BB827688B4900D61186 /* SearchHistoryViewController.xib */,
@@ -476,6 +490,7 @@
 				A691202B2765B48A00F8A734 /* LaunchScreen.storyboard in Resources */,
 				A69120372765B4F700F8A734 /* PhotoSearchViewController.xib in Resources */,
 				A69120282765B48A00F8A734 /* Assets.xcassets in Resources */,
+				A6DFBA462768CD1300845DB2 /* ClearAllHeader.xib in Resources */,
 				A6EF4BBA27688B4900D61186 /* SearchHistoryViewController.xib in Resources */,
 				A69120262765B48900F8A734 /* Main.storyboard in Resources */,
 				A6CEDBBB27669D3100CF5962 /* PhotoCell.xib in Resources */,
@@ -536,6 +551,7 @@
 				A6CEDBA52766806000CF5962 /* PhotoUseCases.swift in Sources */,
 				A6CEDBA7276680A300CF5962 /* Photo.swift in Sources */,
 				A6CEDB802766507800CF5962 /* Server.swift in Sources */,
+				A6DFBA442768CD0600845DB2 /* ClearAllHeader.swift in Sources */,
 				A6CEDB812766507800CF5962 /* AppLibManager.swift in Sources */,
 				A6DFBA392768BB1B00845DB2 /* SearchHistorySceneInteractor.swift in Sources */,
 				A6CEDBAF2766822500CF5962 /* SearchRequestData.swift in Sources */,

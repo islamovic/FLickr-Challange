@@ -74,6 +74,7 @@ private extension SearchHistoryViewController {
     func udpateTableView() {
         self.searchHistoryTableView.tableFooterView = UIView(frame: .zero)
         self.searchHistoryTableView.dataSource = self
+        self.searchHistoryTableView.delegate = self
         self.searchHistoryTableView.register(SearchHistoryCell.self)
     }
 }
@@ -92,10 +93,34 @@ extension SearchHistoryViewController: UITableViewDataSource {
     }
 }
 
+extension SearchHistoryViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if self.dataStore.searchHistory.isEmpty {
+            return nil
+        }
+        let clearAllHeaderView = ClearAllHeader()
+        clearAllHeaderView.delegate = self
+        return clearAllHeaderView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
+    }
+}
+
 extension SearchHistoryViewController: SearchHistoryCellDelegate {
     
     func deleteHistoryDidSelected(history: String) {
         AppFileManager.deleteHistory(history)
+        self.interactor.fetchSearchHistory()
+    }
+}
+
+extension SearchHistoryViewController: ClearAllHeaderDelegate {
+    
+    func clearAllHistoryDidTapped() {
+        AppFileManager.deleteAllHistories()
         self.interactor.fetchSearchHistory()
     }
 }
