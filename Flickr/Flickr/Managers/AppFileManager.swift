@@ -28,6 +28,15 @@ struct AppFileManager {
         initData.write(toFile: path, atomically: true)
     }
     
+    private static func save(histories: [String]) {
+
+        var allHistory = histories
+        allHistory.reverse()
+        allHistory.forEach { history in
+            AppFileManager.save(search: history)
+        }
+    }
+    
     static func save(search: String) {
         
         let path = historyFilePath()
@@ -35,7 +44,7 @@ struct AppFileManager {
             createHistoryFile()
         } else {
             guard var history = fetchHistory() else { return }
-            history.append(search)
+            history.insert(search, at: 0)
             let dataToBeSaved = NSArray(array: history)
             dataToBeSaved.write(toFile: path, atomically: true)
         }
@@ -44,5 +53,16 @@ struct AppFileManager {
     static func fetchHistory() -> [String]? {
         let path = historyFilePath()
         return NSArray(contentsOfFile: path) as? [String]
+    }
+    
+    static func deleteHistory(_ history: String) {
+        let searchHistory = fetchHistory() ?? []
+        AppFileManager.deleteAllHistories()
+        let updatedHistory = searchHistory.filter { $0 != history }
+        AppFileManager.save(histories: updatedHistory)
+    }
+    
+    static func deleteAllHistories() {
+        createHistoryFile()
     }
 }

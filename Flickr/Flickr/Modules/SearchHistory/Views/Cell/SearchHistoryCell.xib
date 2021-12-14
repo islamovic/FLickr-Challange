@@ -31,6 +31,9 @@
                         <color key="tintColor" red="0.89019607840000003" green="0.1333333333" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="xmark.circle" catalog="system"/>
+                        <connections>
+                            <action selector="searchHistoryDeletedDidTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="X6B-gN-4SC"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

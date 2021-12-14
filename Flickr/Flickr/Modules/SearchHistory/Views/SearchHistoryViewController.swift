@@ -87,6 +87,15 @@ extension SearchHistoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: SearchHistoryCell = tableView.dequeueReusableCell(indexPath: indexPath)
         cell.configureCell(self.dataStore.searchHistory[indexPath.row])
+        cell.delegate = self
         return cell
+    }
+}
+
+extension SearchHistoryViewController: SearchHistoryCellDelegate {
+    
+    func deleteHistoryDidSelected(history: String) {
+        AppFileManager.deleteHistory(history)
+        self.interactor.fetchSearchHistory()
     }
 }

@@ -24,6 +24,6 @@ class SearchHistoryScenePresenter: SearchHistoryScenePresentationLogic {
 
 extension SearchHistoryScenePresenter {
     func presentSearchHistory(_ history: [String]) {
-        
+        displayView?.displaySearchHistory(history)
     }
 }
