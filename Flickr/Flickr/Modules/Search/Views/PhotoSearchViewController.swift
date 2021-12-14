@@ -30,6 +30,12 @@ class PhotoSearchViewController: UIViewController {
         setupUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.title = "Photos Feed"
+    }
+    
     @IBAction func searchButtonDidTapped(_ sender: UIButton) {
         self.router.routeToSearchHistory()
     }
@@ -38,12 +44,14 @@ class PhotoSearchViewController: UIViewController {
 private extension PhotoSearchViewController {
     
     func setupUI() {
-        self.title = "Photos Feed"
         self.searchResultCollectionView.register(PhotoCell.self)
         self.searchResultCollectionView.dataSource = self
         self.searchResultCollectionView.delegate = self
         self.searchResultCollectionView.collectionViewLayout = photoListLayout
-        self.imageSearchBar.delegate = self
+
+        let searchButton = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"),
+                                           style: .plain, target: self, action: #selector(searchButtonDidTapped(_:)))
+        self.navigationItem.rightBarButtonItem = searchButton
     }
     
     var photoListLayout: UICollectionViewLayout {
@@ -69,15 +77,6 @@ extension PhotoSearchViewController: PhotoSearchSceneDisplayView {
     func displaySearchResult(photos: [Photo]) {
         self.dataStore.photos.append(contentsOf: photos)
         self.searchResultCollectionView.reloadData()
-    }
-}
-
-extension PhotoSearchViewController: UISearchBarDelegate {
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let search = searchBar.text else { return }
-        self.dataStore.search = search
-        self.interactor.searchPhotos()
     }
 }
 

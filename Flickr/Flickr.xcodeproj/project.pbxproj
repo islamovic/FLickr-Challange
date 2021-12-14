@@ -51,6 +51,8 @@
 		A6EF4BBA27688B4900D61186 /* SearchHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6EF4BB827688B4900D61186 /* SearchHistoryViewController.xib */; };
 		A6EF4BBC27688B6000D61186 /* SearchHistorySceneConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF4BBB27688B6000D61186 /* SearchHistorySceneConfigurator.swift */; };
 		A6EF4BBE27688BA100D61186 /* PhotoSerchSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF4BBD27688BA100D61186 /* PhotoSerchSceneRouter.swift */; };
+		A6EF4BC2276893B300D61186 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF4BC0276893B300D61186 /* SearchResultCell.swift */; };
+		A6EF4BC3276893B300D61186 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6EF4BC1276893B300D61186 /* SearchResultCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +102,8 @@
 		A6EF4BB827688B4900D61186 /* SearchHistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchHistoryViewController.xib; sourceTree = "<group>"; };
 		A6EF4BBB27688B6000D61186 /* SearchHistorySceneConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistorySceneConfigurator.swift; sourceTree = "<group>"; };
 		A6EF4BBD27688BA100D61186 /* PhotoSerchSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSerchSceneRouter.swift; sourceTree = "<group>"; };
+		A6EF4BC0276893B300D61186 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		A6EF4BC1276893B300D61186 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		C70B31D7094AED8ADF435454 /* Pods_Flickr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flickr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA92EBED5F73875F5C688389 /* Pods-Flickr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flickr.release.xcconfig"; path = "Target Support Files/Pods-Flickr/Pods-Flickr.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -380,10 +384,20 @@
 		A6EF4BB627688ADD00D61186 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A6EF4BBF2768939D00D61186 /* Cell */,
 				A6EF4BB727688B4900D61186 /* SearchHistoryViewController.swift */,
 				A6EF4BB827688B4900D61186 /* SearchHistoryViewController.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A6EF4BBF2768939D00D61186 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A6EF4BC0276893B300D61186 /* SearchResultCell.swift */,
+				A6EF4BC1276893B300D61186 /* SearchResultCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,6 +466,7 @@
 				A6EF4BBA27688B4900D61186 /* SearchHistoryViewController.xib in Resources */,
 				A69120262765B48900F8A734 /* Main.storyboard in Resources */,
 				A6CEDBBB27669D3100CF5962 /* PhotoCell.xib in Resources */,
+				A6EF4BC3276893B300D61186 /* SearchResultCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +529,7 @@
 				A69120232765B48900F8A734 /* ViewController.swift in Sources */,
 				A6EF4BBE27688BA100D61186 /* PhotoSerchSceneRouter.swift in Sources */,
 				A69120362765B4F700F8A734 /* PhotoSearchViewController.swift in Sources */,
+				A6EF4BC2276893B300D61186 /* SearchResultCell.swift in Sources */,
 				A6CEDB8D2766507800CF5962 /* HTTPMethod.swift in Sources */,
 				A691201F2765B48900F8A734 /* AppDelegate.swift in Sources */,
 				A6CEDB892766507800CF5962 /* NetworkClient.swift in Sources */,

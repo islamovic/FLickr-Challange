@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchHistoryViewController" customModule="Flickr" customModuleProvider="target">
             <connections>
+                <outlet property="searchHistoryTableView" destination="eqw-0j-nG2" id="x7i-2O-Icx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,16 +19,19 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bq5-v4-RiJ">
-                    <rect key="frame" x="178" y="291" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eqw-0j-nG2">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eqw-0j-nG2" secondAttribute="trailing" id="Br0-OE-cyN"/>
+                <constraint firstItem="eqw-0j-nG2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="JFI-M6-nnD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="eqw-0j-nG2" secondAttribute="bottom" id="tTK-cx-hyt"/>
+                <constraint firstItem="eqw-0j-nG2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wwk-7t-YP3"/>
+            </constraints>
             <point key="canvasLocation" x="139" y="151"/>
         </view>
     </objects>
