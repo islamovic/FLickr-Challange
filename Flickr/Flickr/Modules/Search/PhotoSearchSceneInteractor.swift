@@ -49,7 +49,6 @@ extension PhotoSearchSceneInteractor {
             
             switch result {
             case .success(let output):
-                self?.photos = output.photos
                 self?.presenter?.presentPhotoSearch(output.photos)
                 
             case .error(let error):

@@ -19,6 +19,18 @@ struct Photo: Codable {
     let isFriend: Int
     let isFamily: Int
     
+    init() {
+        self.id = ""
+        self.owner = ""
+        self.secret = ""
+        self.server = ""
+        self.title = ""
+        self.farm = 0
+        self.isPublic = 0
+        self.isFriend = 0
+        self.isFamily = 0
+    }
+    
     enum CodingKeys: String, CodingKey {
         
         case id

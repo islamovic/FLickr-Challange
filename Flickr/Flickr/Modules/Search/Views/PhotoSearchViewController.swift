@@ -109,7 +109,9 @@ extension PhotoSearchViewController: UICollectionViewDelegate {
         forItemAt indexPath: IndexPath) {
         
             if indexPath.row == self.dataStore.photos.count - 1 {
+                
                 self.dataStore.page += 1
+                self.searchResultCollectionView.reloadData()
                 self.interactor.searchPhotos()
             }
     }

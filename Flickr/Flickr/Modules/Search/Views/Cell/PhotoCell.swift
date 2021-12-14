@@ -15,7 +15,13 @@ class PhotoCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.photoImageView.image = nil
+        self.activityIndicator.startAnimating()
     }
 }
 
@@ -23,25 +29,27 @@ extension PhotoCell {
     
     func configureCell(_ photo: Photo) {
         
-        self.activityIndicator.stopAnimating()
-        let url = URL(string: photo.photoURL)!
-        self.photoImageView.kf.setImage(with: url, completionHandler: nil)
+        self.activityIndicator.startAnimating()
+        guard let url = URL(string: photo.photoURL) else {
+            self.photoImageView.image = UIImage(named: "Broken Link")
+            return
+        }
 
-//        let resource = ImageResource(downloadURL: url)
-//        KingfisherManager.shared.retrieveImage(with: resource) { result in
-//            switch result {
-//            case .success(let image):
-//                DispatchQueue.main.async { [weak self] in
-//                    self?.activityIndicator.stopAnimating()
-//                    self?.photoImageView.image = image.image
-//                }
-//
-//            case .failure:
-//                DispatchQueue.main.async { [weak self] in
-//                    self?.activityIndicator.stopAnimating()
-//                    self?.photoImageView.image = UIImage(named: "Broken Link")
-//                }
-//            }
-//        }
+        let resource = ImageResource(downloadURL: url)
+        KingfisherManager.shared.retrieveImage(with: resource) { result in
+            switch result {
+            case .success(let image):
+                DispatchQueue.main.async { [weak self] in
+                    self?.activityIndicator.stopAnimating()
+                    self?.photoImageView.image = image.image
+                }
+
+            case .failure:
+                DispatchQueue.main.async { [weak self] in
+                    self?.activityIndicator.stopAnimating()
+                    self?.backgroundColor = .gray
+                }
+            }
+        }
     }
 }
