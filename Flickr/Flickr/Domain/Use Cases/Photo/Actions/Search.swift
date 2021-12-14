@@ -15,6 +15,8 @@ extension Photo.Search {
     
     struct Input {
         let title: String
+        let page: Int
+        let perPage: Int
     }
     
     struct Output {

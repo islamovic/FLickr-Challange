@@ -35,6 +35,7 @@ private extension PhotoSearchViewController {
     func setupUI() {
         self.searchResultCollectionView.register(PhotoCell.self)
         self.searchResultCollectionView.dataSource = self
+        self.searchResultCollectionView.delegate = self
         self.searchResultCollectionView.collectionViewLayout = photoListLayout
         self.imageSearchBar.delegate = self
     }
@@ -60,6 +61,7 @@ private extension PhotoSearchViewController {
 extension PhotoSearchViewController: PhotoSearchSceneDisplayView {
     
     func displaySearchResult(photos: [Photo]) {
+        self.dataStore.photos.append(contentsOf: photos)
         self.searchResultCollectionView.reloadData()
     }
 }
@@ -68,7 +70,8 @@ extension PhotoSearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let search = searchBar.text else { return }
-        self.interactor.search(search)
+        self.dataStore.search = search
+        self.interactor.searchPhotos()
     }
 }
 
@@ -82,5 +85,19 @@ extension PhotoSearchViewController: UICollectionViewDataSource {
         let cell: PhotoCell = collectionView.dequeueReusableCell(indexPath: indexPath)
         cell.configureCell(self.dataStore.photos[indexPath.row])
         return cell
+    }
+}
+
+extension PhotoSearchViewController: UICollectionViewDelegate {
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        willDisplay cell: UICollectionViewCell,
+        forItemAt indexPath: IndexPath) {
+        
+            if indexPath.row == self.dataStore.photos.count - 1 {
+                self.dataStore.page += 1
+                self.interactor.searchPhotos()
+            }
     }
 }

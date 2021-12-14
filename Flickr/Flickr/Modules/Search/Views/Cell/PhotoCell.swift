@@ -23,24 +23,25 @@ extension PhotoCell {
     
     func configureCell(_ photo: Photo) {
         
-        self.activityIndicator.startAnimating()
+        self.activityIndicator.stopAnimating()
         let url = URL(string: photo.photoURL)!
+        self.photoImageView.kf.setImage(with: url, completionHandler: nil)
 
-        let resource = ImageResource(downloadURL: url)
-        KingfisherManager.shared.retrieveImage(with: resource) { result in
-            switch result {
-            case .success(let image):
-                DispatchQueue.main.async { [weak self] in
-                    self?.activityIndicator.stopAnimating()
-                    self?.photoImageView.image = image.image
-                }
-
-            case .failure:
-                DispatchQueue.main.async { [weak self] in
-                    self?.activityIndicator.stopAnimating()
-                    self?.photoImageView.image = UIImage(named: "Broken Link")
-                }
-            }
-        }
+//        let resource = ImageResource(downloadURL: url)
+//        KingfisherManager.shared.retrieveImage(with: resource) { result in
+//            switch result {
+//            case .success(let image):
+//                DispatchQueue.main.async { [weak self] in
+//                    self?.activityIndicator.stopAnimating()
+//                    self?.photoImageView.image = image.image
+//                }
+//
+//            case .failure:
+//                DispatchQueue.main.async { [weak self] in
+//                    self?.activityIndicator.stopAnimating()
+//                    self?.photoImageView.image = UIImage(named: "Broken Link")
+//                }
+//            }
+//        }
     }
 }

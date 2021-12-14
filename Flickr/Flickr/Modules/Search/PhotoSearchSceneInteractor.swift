@@ -9,10 +9,16 @@ import Foundation
 
 protocol PhotoSearchSceneDataStore: AnyObject {
     var photos: [Photo] { get set }
+    
+    var page: Int { get set }
+    
+    var perPage: Int { get set }
+    
+    var search: String { get set }
 }
 
 protocol PhotoSearchSceneBusinessLogic: AnyObject {
-    func search(_ title: String)
+    func searchPhotos()
 }
 
 class PhotoSearchSceneInteractor: PhotoSearchSceneBusinessLogic, PhotoSearchSceneDataStore {
@@ -24,6 +30,12 @@ class PhotoSearchSceneInteractor: PhotoSearchSceneBusinessLogic, PhotoSearchScen
     
     var photos: [Photo] = []
     
+    var search: String = ""
+    
+    var page: Int = 1
+    
+    var perPage: Int = 20
+    
     // MARK: - Initializers
     required init(presenter: PhotoSearchScenePresentationLogic) {
         self.presenter = presenter
@@ -32,8 +44,8 @@ class PhotoSearchSceneInteractor: PhotoSearchSceneBusinessLogic, PhotoSearchScen
 
 extension PhotoSearchSceneInteractor {
     
-    func search(_ title: String) {
-        searchWorker.search(title) { [weak self] result in
+    func searchPhotos() {
+        searchWorker.search(search, page: page, perPage: perPage) { [weak self] result in
             
             switch result {
             case .success(let output):

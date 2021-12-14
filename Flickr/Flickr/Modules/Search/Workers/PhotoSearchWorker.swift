@@ -11,9 +11,13 @@ class PhotoSearchWorker {
     
     let photoSearchNetworkService = PhotoNetworkServices()
     
-    func search(_ title: String, completion: @escaping (Result<Photo.Search.Output, NetworkError>) -> Void) {
+    func search(
+        _ title: String,
+        page: Int,
+        perPage: Int,
+        completion: @escaping (Result<Photo.Search.Output, NetworkError>) -> Void) {
         
-        let input = Photo.Search.Input(title: title)
+        let input = Photo.Search.Input(title: title, page: page, perPage: perPage)
         photoSearchNetworkService.search(input) { result in
             
             var response: Result<Photo.Search.Output, NetworkError>
