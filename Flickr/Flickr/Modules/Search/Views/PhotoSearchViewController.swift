@@ -80,6 +80,14 @@ extension PhotoSearchViewController: PhotoSearchSceneDisplayView {
     }
 }
 
+extension PhotoSearchViewController: SearchHistorySceneDelegate {
+    
+    func searchText(with search: String) {
+        self.dataStore.search = search
+        self.interactor.searchPhotos()
+    }
+}
+
 extension PhotoSearchViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

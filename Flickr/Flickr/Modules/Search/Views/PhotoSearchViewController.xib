@@ -19,8 +19,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" keyboardDismissMode="onDrag" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ldL-G4-kRN">
-                    <rect key="frame" x="0.0" y="95" width="414" height="767"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ldL-G4-kRN">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="O1P-Sx-NzH">
                         <size key="itemSize" width="128" height="128"/>
@@ -34,6 +34,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ldL-G4-kRN" secondAttribute="bottom" id="KKz-EU-piH"/>
+                <constraint firstItem="ldL-G4-kRN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Wip-N0-jBM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ldL-G4-kRN" secondAttribute="trailing" id="jwE-eT-Cvj"/>
                 <constraint firstItem="ldL-G4-kRN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zFR-0K-rBq"/>
             </constraints>

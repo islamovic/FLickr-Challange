@@ -28,6 +28,7 @@ extension PhotoSearchSceneRouter {
     
     func routeToSearchHistory() {
         let searchHistoryViewController = SearchHistorySceneConfigurator.configure()
+        searchHistoryViewController.delegate = viewController
         viewController?.navigationController?.pushViewController(searchHistoryViewController, animated: false)
     }
 }

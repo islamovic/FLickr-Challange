@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol SearchHistorySceneDelegate: AnyObject {
+    func searchText(with search: String)
+}
+
 class SearchHistoryViewController: UIViewController {
 
     @IBOutlet private weak var searchHistoryTableView: UITableView!
+    
+    weak var delegate: SearchHistorySceneDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,13 +25,12 @@ class SearchHistoryViewController: UIViewController {
 }
 
 extension SearchHistoryViewController: UISearchBarDelegate {
-    
-    /**func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-     guard let search = searchBar.text else { return }
-     self.dataStore.search = search
-     self.interactor.searchPhotos()
- }
-*/
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let search = searchBar.text else { return }
+        delegate?.searchText(with: search)
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 private extension SearchHistoryViewController {
