@@ -47,7 +47,6 @@ extension PhotoCell {
             case .failure:
                 DispatchQueue.main.async { [weak self] in
                     self?.activityIndicator.stopAnimating()
-                    self?.backgroundColor = .gray
                 }
             }
         }

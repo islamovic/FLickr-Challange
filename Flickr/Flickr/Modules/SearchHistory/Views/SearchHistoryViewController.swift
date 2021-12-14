@@ -107,6 +107,12 @@ extension SearchHistoryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 44
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let searchHistory = self.dataStore.searchHistory[indexPath.row]
+        delegate?.searchText(with: searchHistory)
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 extension SearchHistoryViewController: SearchHistoryCellDelegate {
