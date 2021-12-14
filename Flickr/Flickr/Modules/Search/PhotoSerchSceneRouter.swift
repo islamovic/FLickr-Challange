@@ -16,7 +16,7 @@ protocol PhotoSearchSceneRoutingLogic: AnyObject {
 class PhotoSearchSceneRouter: PhotoSearchSceneRoutingLogic {
     
     // MARK: Stored Properties
-    var viewController: Controller?
+    weak var viewController: Controller?
 
     // MARK: Initializers
     required init(controller: Controller?) {

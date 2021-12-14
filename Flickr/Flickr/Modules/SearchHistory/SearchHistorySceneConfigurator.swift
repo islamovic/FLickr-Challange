@@ -11,6 +11,10 @@ class SearchHistorySceneConfigurator {
     
     static func configure() -> SearchHistoryViewController {
         let viewController = SearchHistoryViewController()
+        let presenter = SearchHistoryScenePresenter(displayView: viewController)
+        let interactor = SearchHistorySceneInteractor(presenter: presenter)
+        viewController.interactor = interactor
+        viewController.dataStore = interactor
         return viewController
     }
 }
