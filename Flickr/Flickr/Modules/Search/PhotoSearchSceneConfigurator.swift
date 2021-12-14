@@ -15,7 +15,7 @@ class PhotoSearchSceneConfigurator {
         let presenter = PhotoSearchScenePresenter(displayView: viewController)
         let interactor = PhotoSearchSceneInteractor(presenter: presenter)
         viewController.interactor = interactor
-        viewController.viewStore = presenter
+        viewController.dataStore = interactor
         return viewController
     }
 }

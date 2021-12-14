@@ -7,20 +7,14 @@
 
 import Foundation
 
-protocol PhotoSearchSceneViewStore: AnyObject {
-    var photosUrl: [String] { get set }
-}
-
 protocol PhotoSearchScenePresentationLogic: AnyObject {
     func presentPhotoSearch(_ photos: [Photo])
 }
 
-class PhotoSearchScenePresenter: PhotoSearchScenePresentationLogic, PhotoSearchSceneViewStore {
+class PhotoSearchScenePresenter: PhotoSearchScenePresentationLogic {
     
     // MARK: - Stored Properties
     weak var displayView: PhotoSearchSceneDisplayView?
-    
-    var photosUrl: [String] = []
     
     // MARK: - Initializers
     required init(displayView: PhotoSearchSceneDisplayView) {
@@ -31,8 +25,6 @@ class PhotoSearchScenePresenter: PhotoSearchScenePresentationLogic, PhotoSearchS
 extension PhotoSearchScenePresenter {
     
     func presentPhotoSearch(_ photos: [Photo]) {
-        
-        let photoUrls = photos.map { $0.photoURL }
-        self.displayView?.displaySearchResult(photoUrls: photoUrls)
+        self.displayView?.displaySearchResult(photos: photos)
     }
 }

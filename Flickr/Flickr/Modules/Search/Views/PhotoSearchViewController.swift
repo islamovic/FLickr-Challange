@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PhotoSearchSceneDisplayView: AnyObject {
-    func displaySearchResult(photoUrls: [String])
+    func displaySearchResult(photos: [Photo])
 }
 
 class PhotoSearchViewController: UIViewController {
@@ -17,7 +17,7 @@ class PhotoSearchViewController: UIViewController {
     private let itemHeight: CGFloat = 200
     
     var interactor: PhotoSearchSceneInteractor!
-    var viewStore: PhotoSearchSceneViewStore!
+    var dataStore: PhotoSearchSceneDataStore!
     
     // MARK: - Outletes
     @IBOutlet private weak var imageSearchBar: UISearchBar!
@@ -59,8 +59,7 @@ private extension PhotoSearchViewController {
 
 extension PhotoSearchViewController: PhotoSearchSceneDisplayView {
     
-    func displaySearchResult(photoUrls: [String]) {
-        self.viewStore.photosUrl = photoUrls
+    func displaySearchResult(photos: [Photo]) {
         self.searchResultCollectionView.reloadData()
     }
 }
@@ -76,12 +75,12 @@ extension PhotoSearchViewController: UISearchBarDelegate {
 extension PhotoSearchViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.viewStore.photosUrl.count
+        return self.dataStore.photos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: PhotoCell = collectionView.dequeueReusableCell(indexPath: indexPath)
-        cell.configureCell(self.viewStore.photosUrl[indexPath.row])
+        cell.configureCell(self.dataStore.photos[indexPath.row])
         return cell
     }
 }

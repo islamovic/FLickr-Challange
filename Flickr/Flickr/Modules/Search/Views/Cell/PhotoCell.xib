@@ -19,17 +19,23 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rtk-ct-dLa">
                         <rect key="frame" x="0.0" y="0.0" width="136" height="136"/>
                     </imageView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="paY-l8-0UV">
+                        <rect key="frame" x="58" y="58" width="20" height="20"/>
+                    </activityIndicatorView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="rtk-ct-dLa" secondAttribute="trailing" id="45z-Mw-loJ"/>
                 <constraint firstItem="rtk-ct-dLa" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="HRG-0o-lqC"/>
+                <constraint firstItem="paY-l8-0UV" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="LpL-m7-Xh5"/>
+                <constraint firstItem="paY-l8-0UV" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Qtk-SW-mOc"/>
                 <constraint firstAttribute="bottom" secondItem="rtk-ct-dLa" secondAttribute="bottom" id="Uqp-aC-Pjw"/>
                 <constraint firstItem="rtk-ct-dLa" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="lz9-iM-IsB"/>
             </constraints>
             <size key="customSize" width="136" height="136"/>
             <connections>
+                <outlet property="activityIndicator" destination="paY-l8-0UV" id="jZa-gN-4EQ"/>
                 <outlet property="photoImageView" destination="rtk-ct-dLa" id="stp-CZ-F8h"/>
             </connections>
             <point key="canvasLocation" x="200.00000000000003" y="179.46428571428569"/>

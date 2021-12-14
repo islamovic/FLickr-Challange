@@ -7,16 +7,22 @@
 
 import Foundation
 
+protocol PhotoSearchSceneDataStore: AnyObject {
+    var photos: [Photo] { get set }
+}
+
 protocol PhotoSearchSceneBusinessLogic: AnyObject {
     func search(_ title: String)
 }
 
-class PhotoSearchSceneInteractor: PhotoSearchSceneBusinessLogic {
+class PhotoSearchSceneInteractor: PhotoSearchSceneBusinessLogic, PhotoSearchSceneDataStore {
     
     // MARK: - Stored Properties
     let presenter: PhotoSearchScenePresentationLogic?
     
     private let searchWorker = PhotoSearchWorker()
+    
+    var photos: [Photo] = []
     
     // MARK: - Initializers
     required init(presenter: PhotoSearchScenePresentationLogic) {
@@ -31,6 +37,7 @@ extension PhotoSearchSceneInteractor {
             
             switch result {
             case .success(let output):
+                self?.photos = output.photos
                 self?.presenter?.presentPhotoSearch(output.photos)
                 
             case .error(let error):
