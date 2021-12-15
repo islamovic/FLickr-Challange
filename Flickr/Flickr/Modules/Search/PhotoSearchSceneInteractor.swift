@@ -19,6 +19,8 @@ protocol PhotoSearchSceneDataStore: AnyObject {
 
 protocol PhotoSearchSceneBusinessLogic: AnyObject {
     func searchPhotos()
+    
+    func startFreshSearch()
 }
 
 class PhotoSearchSceneInteractor: PhotoSearchSceneBusinessLogic, PhotoSearchSceneDataStore {
@@ -55,5 +57,10 @@ extension PhotoSearchSceneInteractor {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    func startFreshSearch() {
+        self.photos.removeAll()
+        self.page = 1
     }
 }

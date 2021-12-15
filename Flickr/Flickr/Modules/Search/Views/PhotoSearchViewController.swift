@@ -83,11 +83,9 @@ extension PhotoSearchViewController: PhotoSearchSceneDisplayView {
 extension PhotoSearchViewController: SearchHistorySceneDelegate {
     
     func searchText(with search: String) {
-        self.dataStore.photos.removeAll()
-        self.dataStore.page = 1
-        self.searchResultCollectionView.reloadData()
-        
         self.dataStore.search = search
+        self.interactor.startFreshSearch()
+        self.searchResultCollectionView.reloadData()
         self.interactor.searchPhotos()
     }
 }
@@ -107,16 +105,11 @@ extension PhotoSearchViewController: UICollectionViewDataSource {
 
 extension PhotoSearchViewController: UICollectionViewDelegate {
     
-    func collectionView(
-        _ collectionView: UICollectionView,
-        willDisplay cell: UICollectionViewCell,
-        forItemAt indexPath: IndexPath) {
-        
-            if indexPath.row == self.dataStore.photos.count - 1 {
-                
-                self.dataStore.page += 1
-                self.searchResultCollectionView.reloadData()
-                self.interactor.searchPhotos()
-            }
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
+        if indexPath.row == self.dataStore.photos.count - 1 {
+            self.dataStore.page += 1
+            self.interactor.searchPhotos()
+        }
     }
 }
