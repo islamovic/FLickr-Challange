@@ -2,16 +2,13 @@
 
 ## Project Setup
 
-1. Clone the project from this link: `git@github.com:islamovic/FLickr-Challange.git`
+1. Clone the project from this link `git@github.com:islamovic/FLickr-Challange.git`
 2. run 'pod install' to install `Alamofire` and `KingFisher` pods
 3. Open `Flickr.xcworkspace` then Build and Run the project. 
 
-
 ## Project Architecture 
 
-I'm Using VIP Clean Code, you can read more about it from Here: `https://hackernoon.com/introducing-clean-swift-architecture-vip-770a639ad7bf`
-
-
+I'm Using VIP Clean Code, you can read more about it from <a href="https://hackernoon.com/introducing-clean-swift-architecture-vip-770a639ad7bf" target="_blank">Here</a>
 
 ## Project Component
 
