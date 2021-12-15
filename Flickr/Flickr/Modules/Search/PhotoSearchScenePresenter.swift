@@ -8,7 +8,7 @@
 import Foundation
 
 protocol PhotoSearchScenePresentationLogic: AnyObject {
-    func presentPhotoSearch(_ photos: [Photo])
+    func presentPhotoSearch(_ photos: Photo.Search.Output)
 }
 
 class PhotoSearchScenePresenter: PhotoSearchScenePresentationLogic {
@@ -24,7 +24,7 @@ class PhotoSearchScenePresenter: PhotoSearchScenePresentationLogic {
 
 extension PhotoSearchScenePresenter {
     
-    func presentPhotoSearch(_ photos: [Photo]) {
-        self.displayView?.displaySearchResult(photos: photos)
+    func presentPhotoSearch(_ photos: Photo.Search.Output) {
+        self.displayView?.displaySearchResult(photos: photos.photos)
     }
 }
