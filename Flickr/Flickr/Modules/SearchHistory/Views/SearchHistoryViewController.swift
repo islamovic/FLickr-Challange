@@ -42,9 +42,14 @@ extension SearchHistoryViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let search = searchBar.text else { return }
-        AppFileManager.save(search: search)
+        self.interactor.search = search
+        self.interactor.saveHistory(search: search)
         delegate?.searchText(with: search)
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 }
 
@@ -118,15 +123,15 @@ extension SearchHistoryViewController: UITableViewDelegate {
 extension SearchHistoryViewController: SearchHistoryCellDelegate {
     
     func deleteHistoryDidSelected(history: String) {
-        AppFileManager.deleteHistory(history)
-        self.interactor.fetchSearchHistory()
+        self.interactor.delete(history: history)
+        self.searchHistoryTableView.reloadData()
     }
 }
 
 extension SearchHistoryViewController: ClearAllHeaderDelegate {
     
     func clearAllHistoryDidTapped() {
-        AppFileManager.deleteAllHistories()
-        self.interactor.fetchSearchHistory()
+        self.interactor.clearAllSearchHistory()
+        self.searchHistoryTableView.reloadData()
     }
 }

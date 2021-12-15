@@ -58,7 +58,6 @@
 		A6EF4BBA27688B4900D61186 /* SearchHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6EF4BB827688B4900D61186 /* SearchHistoryViewController.xib */; };
 		A6EF4BBC27688B6000D61186 /* SearchHistorySceneConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF4BBB27688B6000D61186 /* SearchHistorySceneConfigurator.swift */; };
 		A6EF4BBE27688BA100D61186 /* PhotoSerchSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF4BBD27688BA100D61186 /* PhotoSerchSceneRouter.swift */; };
-		A6EF4BC52768A1B800D61186 /* AppFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF4BC42768A1B800D61186 /* AppFileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,7 +114,6 @@
 		A6EF4BB827688B4900D61186 /* SearchHistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchHistoryViewController.xib; sourceTree = "<group>"; };
 		A6EF4BBB27688B6000D61186 /* SearchHistorySceneConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistorySceneConfigurator.swift; sourceTree = "<group>"; };
 		A6EF4BBD27688BA100D61186 /* PhotoSerchSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSerchSceneRouter.swift; sourceTree = "<group>"; };
-		A6EF4BC42768A1B800D61186 /* AppFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFileManager.swift; sourceTree = "<group>"; };
 		C70B31D7094AED8ADF435454 /* Pods_Flickr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flickr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA92EBED5F73875F5C688389 /* Pods-Flickr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flickr.release.xcconfig"; path = "Target Support Files/Pods-Flickr/Pods-Flickr.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -231,7 +229,6 @@
 			isa = PBXGroup;
 			children = (
 				A6CEDB632766507700CF5962 /* AppLibManager.swift */,
-				A6EF4BC42768A1B800D61186 /* AppFileManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -587,7 +584,6 @@
 				A6EF4BBC27688B6000D61186 /* SearchHistorySceneConfigurator.swift in Sources */,
 				A6CEDB8C2766507800CF5962 /* NetworkService.swift in Sources */,
 				A6CEDBBA27669D3100CF5962 /* PhotoCell.swift in Sources */,
-				A6EF4BC52768A1B800D61186 /* AppFileManager.swift in Sources */,
 				A6CEDB7F2766507800CF5962 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
